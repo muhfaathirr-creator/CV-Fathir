@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - Muhammad Faathir Ramadhan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-transparent">
+        <div class="container">
+            <a class="navbar-brand" href="#profile">Muhammad Faathir Ramadhan</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#profile">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#profil-singkat">Profil Singkat</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pendidikan">Pendidikan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kemampuan">Kemampuan</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="profile" class="d-flex align-items-center text-center" style="min-height: 100vh;">
+            <div class="container">
+                <img src="img/Foto Profile.jpg" class="img-fluid profile-img mb-4" alt="Foto Profil">
+                <h1 class="display-4" id="typing-effect" style="min-height: 80px;"></h1>
+                <div class="social-icons mt-4">
+                </div>
+            </div>
+        </section>
+
+        <section id="profil-singkat" class="hidden-section">
+            <div class="container">
+                <h2 class="text-center">Profil Singkat</h2>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <p class="lead">
+                            Saya adalah mahasiswa aktif jurusan Pengembangan Perangkat Lunak dan Gim (PPLG), yang memiliki minat dalam bidang Design. Mempunyai kemampuan komunikasi dan cepat beradaptasi
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pendidikan" class="hidden-section">
+            <div class="container">
+                <h2 class="text-center">Riwayat Pendidikan</h2>
+                <ul class="timeline">
+                     <li class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-school"></i></div>
+                        <div class="timeline-body card">
+                            <div class="card-body">
+                                <h5 class="card-title">SMK Negeri 1 Bawang</h5>
+                                <p class="text-muted">Jurusan Pengembangan Perangkat Lunak dan Gim</p>
+                            </div>
+                        </div>
+                    </li>
+                     <li class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-school"></i></div>
+                        <div class="timeline-body card">
+                            <div class="card-body">
+                                <h5 class="card-title">MTsn 2 Banjarnegara</h5>
+                            </div>
+                        </div>
+                    </li>
+                     <li class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-school"></i></div>
+                        <div class="timeline-body card">
+                            <div class="card-body">
+                                <h5 class="card-title">MIn 3 Banjarnegaa</h5>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="kemampuan" class="hidden-section">
+            <div class="container">
+                <h2 class="text-center">Kemampuan</h2>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="skill-bar mb-4">
+                            <strong>Design</strong>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="85">85%</div>
+                            </div>
+                        </div>
+                        <div class="skill-bar mb-4">
+                            <strong>3D</strong>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="80">80%</div>
+                            </div>
+                        </div>
+                        <div class="skill-bar mb-4">
+                            <strong>C#</strong>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="75">75%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        // Navbar Scroll Effect
+        const navbar = document.querySelector('.navbar');
+        window.onscroll = () => {
+            if (window.scrollY > 50) {
+                navbar.classList.remove('navbar-transparent');
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.add('navbar-transparent');
+                navbar.classList.remove('navbar-scrolled');
+            }
+        };
+
+        // Typing Effect
+        var typed = new Typed('#typing-effect', {
+            strings: ["Muhammad Faathir Ramadhan"],
+            typeSpeed: 80,
+            loop: false,
+            showCursor: true,
+            cursorChar: '|'
+        });
+
+        // Section Animation
+        const sections = document.querySelectorAll('.hidden-section');
+        const sectionObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('pop-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+
+        // Skill Bar Animation
+        const skillsSection = document.querySelector('#kemampuan');
+        const progressBars = document.querySelectorAll('.progress-bar');
+
+        const skillsObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    progressBars.forEach(bar => {
+                        bar.style.width = bar.getAttribute('aria-valuenow') + '%';
+                    });
+                    skillsObserver.unobserve(entry.target); // Animate only once
+                }
+            });
+        }, { threshold: 0.3 });
+
+        if(skillsSection) {
+            skillsObserver.observe(skillsSection);
+        }
+    </script>
+</body>
+</html>
